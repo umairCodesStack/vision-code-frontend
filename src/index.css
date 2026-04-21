@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 33% 17%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 217 33% 17%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 188 95% 43%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 217 33% 22%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 22%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 0%;
+    --input: 217 33% 22%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 0 0% 0%;
+    --sidebar-ring: 160 84% 39%;
+
+    --shadow-3d: 4px 4px 0px 0px hsl(0 0% 0%);
+    --shadow-3d-hover: 2px 2px 0px 0px hsl(0 0% 0%);
+    --shadow-3d-lg: 6px 6px 0px 0px hsl(0 0% 0%);
+
+    --font-display: 'JetBrains Mono', monospace;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .mono {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .card-3d {
+    @apply border-2 border-border bg-card text-card-foreground;
+    box-shadow: var(--shadow-3d);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .card-3d:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-3d-lg);
+  }
+
+  .card-3d:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
+
+  .btn-3d {
+    @apply border-2 border-border font-semibold;
+    box-shadow: var(--shadow-3d);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    font-family: var(--font-display);
+  }
+
+  .btn-3d:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-3d-lg);
+  }
+
+  .btn-3d:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
+
+  .text-glow-primary {
+    text-shadow: 0 0 20px hsl(160 84% 39% / 0.3);
+  }
+
+  .text-glow-secondary {
+    text-shadow: 0 0 20px hsl(188 95% 43% / 0.3);
+  }
+
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, hsl(220 100% 50%), hsl(240 100% 70%));
+  }
+
+  .bg-gradient-secondary {
+    background: linear-gradient(135deg, hsl(280 100% 70%), hsl(300 100% 80%));
+  }
+
+  .bg-gradient-accent {
+    background: linear-gradient(135deg, hsl(25 100% 50%), hsl(45 100% 60%));
+  }
+
+  .bg-gradient-rainbow {
+    background: linear-gradient(135deg, hsl(0 100% 50%), hsl(60 100% 50%), hsl(120 100% 50%), hsl(180 100% 50%), hsl(240 100% 50%), hsl(300 100% 50%));
+  }
+
+  .border-gradient {
+    border: 2px solid transparent;
+    background: linear-gradient(hsl(220 100% 50%), hsl(280 100% 70%)) border-box;
+  }
+
+  .bento-grid {
+    @apply grid gap-6;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
