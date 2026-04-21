@@ -19,6 +19,7 @@ export interface Course {
   rating: number;
   price: number;
   tags: string[];
+  imageUrl: string;
 }
 
 export interface Testimonial {
@@ -50,6 +51,7 @@ export const courses: Course[] = [
     rating: 4.9,
     price: 79,
     tags: ["Python", "Security", "Ethical Hacking"],
+    imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
   },
   {
     id: "2",
@@ -70,6 +72,7 @@ export const courses: Course[] = [
     rating: 4.7,
     price: 59,
     tags: ["React", "Node.js", "PostgreSQL"],
+    imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop",
   },
   {
     id: "3",
@@ -90,6 +93,7 @@ export const courses: Course[] = [
     rating: 4.8,
     price: 49,
     tags: ["DSA", "Interviews", "Problem Solving"],
+    imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop",
   },
   {
     id: "4",
@@ -108,6 +112,7 @@ export const courses: Course[] = [
     rating: 4.6,
     price: 69,
     tags: ["Python", "TensorFlow", "AI"],
+    imageUrl: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=250&fit=crop",
   },
   {
     id: "5",

@@ -5,6 +5,14 @@ import type { Course } from "@/data/mockData";
 export default function CourseCard({ course }: { course: Course }) {
   return (
     <Link to={`/courses/${course.id}`} className="card-3d block p-5 group">
+      <div className="mb-4 overflow-hidden rounded-lg">
+        <img
+          src={course.imageUrl}
+          alt={course.title}
+          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+
       <div className="flex items-center gap-2 mb-3">
         <span className="inline-block bg-primary/20 text-primary font-display text-xs px-2 py-1 border border-primary/30">
           {course.category}
